@@ -1,6 +1,7 @@
 import './App.css'
 import Button from './component/button.jsx'
 import { button } from './src.js'
+import Poisk from './component/poisk.jsx'
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
           <Button text={button[0].text} href={button[0].href} />
           <Button text={button[1].text} href={button[1].href} className="right-button" />
           <Button text={button[2].text} href={button[2].href} className="right-button" />
+        </div>
+        <div className="search-wrapper">
+          <Poisk />
         </div>
       </div>
       <hr className='line'></hr>
