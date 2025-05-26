@@ -1,10 +1,14 @@
 export const button = [
     { 
-        text: "Первая кнопка",
-        link: "https://www.cursor.com/loginDeepPage"
+        text: "главная",
+        href: "https://www.google.com"
     },
     { 
-        text: "Вторая кнопка",
-        link: "https://www.cursor.com/loginDeepPage"
-    }
+        text: "каталог",
+        href: "https://www.yandex.ru"
+    },
+    { 
+        text: "случайная игра",
+        href: "https://www.yandex.ru"
+    },
 ]
