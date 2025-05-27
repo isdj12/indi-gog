@@ -1,81 +1,59 @@
-/* Основные стили кнопки */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  color: #f4f4f4;
+  text-transform: uppercase;
+}
+
 .button {
+  text-decoration: none;
+  border: 1px solid rgb(146, 148, 248);
+  position: relative;
+  overflow: hidden;
   padding: 10px 20px;
-  width: 70px; /* Уменьшил ширину */
-  height: 40px; /* Уменьшил высоту */
-  border: none;
-  outline: none;
   color: black;
   cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
-/* Создает светящийся градиент вокруг кнопки */
+.button:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
 .button:before {
-  content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  content: "";
   position: absolute;
-  top: -2px;
-  left:-2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-}
-
-/* Меняет цвет текста при нажатии */
-.button:active {
-  color: #000
-}
-
-/* Делает фон прозрачным при нажатии */
-.button:active:after {
-  background: transparent;
-}
-
-/* Показывает светящийся эффект при наведении */
-.button:hover:before {
-  opacity: 1;
-}
-
-/* Создает внутренний фон кнопки */
-.button:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: white;
-  border: 2px solid black;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    transparent
+  );
+  transition: all 650ms;
 }
 
-/* Анимация перемещения градиента */
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
-}
-
-/* Стили для ссылок-кнопок */
-a.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.button:hover:before {
+  left: 100%;
 }
 
 /* Контейнер для шапки сайта */
@@ -95,5 +73,5 @@ a.button {
 
 /* Отступ для кнопок справа */
 .right-button {
-  margin-left: 20px; /* Уменьшил отступ */
+  margin-left: 20px;
 }
