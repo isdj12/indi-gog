@@ -25,4 +25,10 @@ body{
   padding: 0;
 }
 
-
+.screenshot {
+  max-width: 300px;
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 40px auto;
+}
