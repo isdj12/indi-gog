@@ -4,13 +4,13 @@ import { button } from './src.js'
 import Poisk from './component/poisk.jsx'
 import Profile from './component/profile.jsx'
 import screenshotImage from './assets/Screenshot_3.png'
-import reactLogo from './assets/react.svg'
+import original from './assets/original.png'
 
 function App() {
   return (
     <>
       <div className="header-container">
-        <img src={reactLogo} alt="logo" className='logo' />
+        <img src={original} alt="logo" className='logo' />
         <div className="button-container">
           <Button text={button[0].text} href={button[0].href} />
           <Button text={button[1].text} href={button[1].href} className="right-button" />
