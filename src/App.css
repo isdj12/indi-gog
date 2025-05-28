@@ -1,26 +1,55 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
   width: 100%;
+  max-height: 100vh;
+  color: #ffffff; /* Белый текст */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Стили для шапки */
+.header-container {
+  background: rgba(0, 0, 0, 0.9); /* Почти черный фон */
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #3a9ad9; /* Синяя граница */
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 70px;
 }
 
 .logo {
   height: auto;
-  width: 230px;
-  transform: scale(1.3);
+  width: 150px;
   margin-left: 15px;
   object-fit: contain;
-  margin-right: 15px;
+  filter: drop-shadow(0 0 5px #3a9ad9); /* Синее свечение */
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
 }
 
 .line {
-  position: relative; 
+  position: fixed;
+  top: 70px;
+  left: 0;
   width: 100%;
-  border: 1.5px solid #ccc;
-  margin: 0 0 15px 0;
+  border: 1px solid #3a9ad9; /* Синяя линия */
+  margin: 0;
+  box-shadow: 0 0 10px rgba(58, 154, 217, 0.7); /* Синее свечение */
+  z-index: 99;
 }
 
 .screenshot {
@@ -35,5 +64,92 @@ body{
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: 90px;
+  margin-right: 20px;
+}
+
+.replacement-block {
+  width: 90%;
+  height: 100%;
+  min-height: calc(100vh - 71px);
+  background-color: #e5e4e2; /* Темно-серый полупрозрачный фон */
+  margin-top: 71px;
+  padding: 20px;
+  position: relative;
+}
+
+.game-indicator {
+  width: 80%;
+  max-width: 800px;
+  height: 400px;
+  background: white; 
+  border: 2px solid #3a9ad9; /* Синяя граница */
+  margin: 20px auto;
+  position: relative;
+  left: -30%;
+  box-shadow: 0 0 15px rgba(58, 154, 217, 0.7); /* Синее свечение */
+  border-radius: 0px 10px 0px 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start; /* Выравнивание по левому краю */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  padding: 0; /* Убираем внутренний отступ */
+}
+
+.game-indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0h1L0 5v1H0V0h5z' fill='%233a9ad9' fill-opacity='.15'/%3E%3C/svg%3E"); /* Синий паттерн */
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.game-indicator-foto {
+  width: 490px; 
+  height: 410px; /* Увеличиваем высоту контейнера на 40px (20px на каждое фото) */
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  z-index: 2; 
+  background-color: transparent; 
+  border: none; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  margin: 0;
+  padding: 0; 
+  overflow: hidden;
+}
+
+.foto-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3a9ad9;
+  margin: 0 0 2px 0; /* Минимальный отступ снизу */
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(58, 154, 217, 0.5);
+  line-height: 1; /* Уменьшаем высоту строки */
+}
+
+.game-indicator-foto .foto {
+  width: 490px;
+  height: 220px; /* Увеличиваем высоту каждого фото на 20px */
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: top; 
+  filter: none;
+  display: block; 
+  border-bottom: 1px solid #3a9ad9;
+}
+
+/* У последнего фото убираем границу */
+.game-indicator-foto .foto:last-child {
+  border-bottom: none;
 }

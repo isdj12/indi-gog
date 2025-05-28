@@ -3,7 +3,6 @@ import Button from './component/button.jsx'
 import { button } from './src.js'
 import Poisk from './component/poisk.jsx'
 import Profile from './component/profile.jsx'
-import screenshotImage from './assets/Screenshot_3.png'
 import original from './assets/original.png'
 
 function App() {
@@ -22,9 +21,14 @@ function App() {
         </div>
       </div>
       <hr className='line'></hr>
-      <div>
-      <img src={screenshotImage} alt="Screenshot" className='screenshot' />
+    <div className="replacement-block">
+      <div className='game-indicator'>
+        <div className='game-indicator-foto'>
+          <img src={original} alt="logo" className='foto' />
+          <img src={original} alt="logo" className='foto' />
+        </div>
       </div>
+    </div>
     </>
   )
 }
