@@ -5,13 +5,15 @@ import './profile.css';
 export default function Profile() {
     const navigate = useNavigate();
 
-    const goToFhod = () => {
-        navigate('/fhod');
+    const handleClick = () => {
+        navigate('/login');
     };
 
     return (
-        <div className="profile-square" onClick={goToFhod} title="Перейти к Fhod">
-            <span className="profile-text">Fhod</span>
+        <div className="profile-square" onClick={handleClick}>
+            <span className="profile-text">
+                Войти
+            </span>
         </div>
     );
 } 
