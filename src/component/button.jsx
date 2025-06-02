@@ -1,12 +1,18 @@
 import React from 'react';
 import './button.css';
 
-export default function Button({ text = "Кнопка", className = "", href = "" }) {
-    const handleClick = () => {
+export default function Button({ text = "Кнопка", className = "", href = "", onClick }) {
+    const handleClick = (e) => {
+        if (onClick) {
+            onClick(e);
+            return;
+        }
+        
         if (href) {
             window.open(href, '_blank', 'noopener,noreferrer');
         }
     };
+    
     if (href) {
         return (
             <a href={href} target="_blank" rel="noopener noreferrer" className={`button ${className}`} onClick={handleClick}>
@@ -14,7 +20,10 @@ export default function Button({ text = "Кнопка", className = "", href = "
             </a>
         );
     }
+    
     return (
-        <button className={`button ${className}`}>{text}</button>
+        <button className={`button ${className}`} onClick={handleClick}>
+            {text}
+        </button>
     );
 }

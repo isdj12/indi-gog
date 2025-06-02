@@ -13,7 +13,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     console.log("Попытка входа с email:", email);
     // Здесь будет логика авторизации
   };
@@ -37,29 +37,20 @@ function Login() {
       <hr className='line'></hr>
       <div className="login-page" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="login-container">
-          <h2>Вход в систему</h2>
+          <h2>Вход</h2>
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Email:</label>
-              <input 
-                type="email" 
-                placeholder="Введите email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+              <input type="email" placeholder="Введите email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </div>
             <div className="form-group">
               <label>Пароль:</label>
-              <input 
-                type="password" 
-                placeholder="Введите пароль" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <input type="password" placeholder="Введите пароль" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
-            <button type="submit">Войти</button>
+            <div className="form-buttons">
+              <Button text="ВОЙТИ В СИСТЕМУ" className="login-button" onClick={handleSubmit} />
+              <Button text="ЗАРЕГИСТРИРОВАТЬСЯ" href="/registration" className="register-button" />
+            </div>
           </form>
         </div>
       </div>
