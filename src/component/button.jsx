@@ -3,6 +3,9 @@ import './button.css';
 
 export default function Button({ text = "Кнопка", className = "", href = "", onClick }) {
     const handleClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
         if (onClick) {
             onClick(e);
             return;
@@ -22,7 +25,7 @@ export default function Button({ text = "Кнопка", className = "", href = "
     }
     
     return (
-        <button className={`button ${className}`} onClick={handleClick}>
+        <button type="button" className={`button ${className}`} onClick={handleClick}>
             {text}
         </button>
     );

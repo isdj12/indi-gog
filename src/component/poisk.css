@@ -33,6 +33,20 @@
     padding: 0;
 }
 
+.button-poisk:hover{
+    animation: rotation 3s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+  
 .search-wrapper {
     margin-left: 45px;
 }
+
